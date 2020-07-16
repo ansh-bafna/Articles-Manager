@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <br>
+<div class="search">
+    <form action="/search" method="post">
+        <input type="text" placeholder="Search by title or author"  name="search" value="{{ request.form.search}}">
+        <div class="actions"><input type="submit" value="Search"></div>
+    </form>
+    <hr>
+    </div>
+    <h1>Articles</h1>
+    <table class="table table-striped">
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for article in articles %}
+    <tr>
+     <td><a href="article/{{article.id}}">{{article.title}}</a></td>
+     <td><a class="btn btn-primary btn-lg" href="/save_articles/{{article.id}}">Save article</a></td>
+    </tr>
+    {% endfor %}
+    </ul>
+</table>
+{% endblock %}

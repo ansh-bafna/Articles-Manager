@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  
+    <h1 class="text-center" >{{article.title}}</h1>
+    <h2 class="text-center" >Wriiten by {{article.author}}  </h2>
+    <hr>
+    <div>
+        {{article.body |safe}}
+    </div>
+
+    
+{% endblock %}

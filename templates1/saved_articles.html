@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  
+    <h1> Saved Articles</h1>
+    <table class="table table-striped">
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for article in articles %}
+    <tr>
+     <td><a href="saved_article/{{article.id}}">{{article.title}}</a></td>
+    </tr>
+    {% endfor %}
+    </ul>
+</table>
+{% endblock %}
